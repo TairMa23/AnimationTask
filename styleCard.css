@@ -1,0 +1,117 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    min-height: 100vh;
+    animation:
+        entrance 2s ease-out forwards;
+
+}
+
+.magic-card {
+    width: 200px;
+    height: 300px;
+    border-radius: 16px;
+    background-color: rgb(253, 253, 253);
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    animation:
+        myAnimation1 10s linear 2s infinite alternate;
+
+    transition: background-color 0.8s ease-in-out,
+        color 0.8s ease-in-out;
+    /* transition: transform 0.8s ease-in-out,
+        background-color 0.8s ease-in-out; */
+    /* transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out; */
+    /* transition: 3ms ease-in-out; */
+}
+
+.magic-card:hover {
+    animation:
+        myAnimation 3s linear,
+        myAnimation1 10s linear 2s infinite alternate;
+
+    /* animation-name: myAnimation;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
+    /* animation-direction: normal; */
+}
+
+@keyframes entrance {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes myAnimation1 {
+    0% {
+        transform: translate(10px);
+    }
+
+    50% {
+        transform: translate(-10px);
+    }
+}
+
+@keyframes myAnimation {
+    0% {
+        background-color: red;
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        background-color: blue;
+        transform: rotate(90deg) scale(1.1);
+    }
+
+    50% {
+        background-color: green;
+        transform: rotate(180deg) scale(1.2);
+    }
+
+    75% {
+        background-color: yellow;
+        transform: rotate(270deg) scale(1.1);
+    }
+
+    100% {
+        background-color: red;
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+
+    .magic-card {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        transition: background-color 0.3s ease,
+            color 0.3s ease;
+    }
+
+    .magic-card:hover {
+        transform: none;
+        background-color: #6b4c9a;
+        color: #ffffff;
+    }
+}

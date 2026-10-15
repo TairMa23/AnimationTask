@@ -1,0 +1,59 @@
+.container {
+    width: 100vh;
+    height: 100vh;
+    border: solid;
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+.para1 {
+    font-size: 16px;
+    transition: font-size 0.5s ease;
+    animation-name: myAnimation;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-duration: alternate;
+}
+
+@keyframes myAnimation {
+    0% {
+        font-size: 15px;
+        color: red;
+    }
+
+    25% {
+        color: blue;
+    }
+
+    50% {
+        color: green;
+    }
+
+    75% {
+        color: yellow;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+.para1:hover {
+    font-size: 1.5em;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(170, 153, 186);
+
+    /* transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out; */
+    transition: 0.5s ease-in-out;
+}
+
+.box:hover {
+    transform: rotate(15deg) scale(1.1);
+
+    background-color: rgb(227, 153, 69);
+}
